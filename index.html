@@ -9,17 +9,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
 </head>
 
 <body>
 
     <!-- toppest nav start -->
-    <div class="toppest d-lg-block d-none">
+    <div class="toppest d-sm-block d-none">
         <div class="container">
             <div class="toppest-contact">
                 <a href="">
-                    <i class="bi bi-geo-fill"></i>&nbsp;
-                    <span>B-113, Kalkaji, New Delhi - 110019</span>
+                    <i class="bi bi-envelope-fill"></i>&nbsp;
+                    <span>info@hospital.com</span>
                 </a>
                 <span class="bar1"></span>
                 <a href="">
@@ -38,11 +46,11 @@
     <!-- toppest nav end -->
 
     <header>
-        <div class="container d-lg-flex d-none">
+        <div class="container d-sm-flex d-none">
             <div class="logodiv">
                 <img src="web/images/demologo.png" alt="">
             </div>
-            <div class="headernav">
+            <!-- <div class="headernav">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
@@ -65,12 +73,15 @@
                 <div class="button">
                     <a href="">Book An Appointment</a>
                 </div>
+            </div> -->
+            <div class="button">
+                <a href="">Book An Appointment <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
 
         <!-- mobile view header -->
-        <div class="container mobiheader d-lg-none d-flex">
-            <i class="bi bi-list"></i>
+        <div class="container mobiheader d-sm-none d-flex">
+            <i class="bi bi-list" onclick="showMenu()"></i>
             <div>
                 <img src="web/images/demologo.png" width="150" alt="">
             </div>
@@ -78,20 +89,59 @@
         </div>
     </header>
 
+    <!-- menu start -->
+    <div class="menu">
+        <div class="text-end p-3">
+            <i class="bi bi-x" onclick="removeMenu()"></i>
+        </div>
+        <ul>
+            <li><a href="" class="active">About Us</a></li>
+            <li><a href="">Key Features</a></li>
+            <li onclick="showSubMenu()"><a href="javascript:void(0);">Our Services <i
+                        class="bi bi-caret-down-fill"></i></a>
+                <ul class="menusublist">
+                    <li><a href="">Outpatient Management</a></li>
+                    <li><a href="">Inpatient Management</a></li>
+                    <li><a href="">LIMS (Lab)</a></li>
+                    <li><a href="">Pharmacy Management</a></li>
+                    <li><a href="">(EHR) Electronic Health Record</a></li>
+                    <li><a href="">Inventory Management</a></li>
+                    <li><a href="">RIS and PACS</a></li>
+                    <li><a href="">Clinical Assessment Forms</a></li>
+                    <li><a href="">Healthcare Revenue Cycle Management / TPA System</a></li>
+                    <li><a href="">FHIR Compliant</a></li>
+                    <li><a href="">Operation Theater Management</a></li>
+                    <li><a href="">Workforce Management</a></li>
+                    <li><a href="">Communication Management</a></li>
+                </ul>
+            </li>
+
+            <li><a href="">Our Packages</a></li>
+            <!-- <li><a href="">Contact</a></li> -->
+            <li><a href="" class="active">Book An Appointment <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
+    </div>
+
+
     <!-- hero banner -->
     <section class="herobanner" style="background-image: url(web/images/hero-1.jpg);">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-6 d-flex align-items-center justify-content-start">
+                <div class="col-lg-6 d-flex align-items-center space100">
                     <div class="herobannertext">
-                        <h6 class="headingcapital">welcome to our clinic</h6>
-                        <h1 class="bannerheading">Take Care of <br> Your Health</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, voluptatum
-                            doloribus. quo tempore deleniti excepturi quis, magni dolore nihil et quia nam
-                            praesentium illo aut consectetur ratione at ad. Sapiente tempora ullam tenetur accusantium,
-                            quidem dolores illo quos placeat?</p>
-                        <div class="button">
+                        <h6 class="headingcapital">welcome to Hospital</h6>
+                        <h1 class="bannerheading mb-4 ">Leading Hospital Management <br> Software in india</h1>
+                        <p>With OPD, IPD, daycare, lab, radiology, pharmacy, and tele-consulting; all under one roof,
+                            Hospital Management Software in India is a comprehensive solution provider for hospices and
+                            medical agencies.</p>
+                        <div class="row">
+                            <div class="col-sm-6"><i class="bi bi-chevron-double-right"></i> For Hospitals (HIMS)</div>
+                            <div class="col-sm-6"><i class="bi bi-chevron-double-right"></i> For Day-care Centers</div>
+                            <div class="col-sm-6"><i class="bi bi-chevron-double-right"></i> Workforce Management</div>
+                            <div class="col-sm-6"><i class="bi bi-chevron-double-right"></i> For Clinics</div>
+                        </div>
+                        <div class="button mt-4">
                             <a href="">Book An Appointment</a>
                         </div>
                     </div>
@@ -106,86 +156,743 @@
         </div>
     </section>
 
+
+
+
     <!-- after banner -->
     <div class="afterdiv">
         <div class="container">
-            <div class="row gx-0 gy-3">
-                <div class="col-lg-3 col-sm-6">
+            <div class="autoplay">
+                <div>
                     <div class="afterdiv1 afterdives">
-                        <h5>Working Time</h5>
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>Mon - Wed</td>
-                                    <td>-</td>
-                                    <td>9:00 AM - 7:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Thursday</td>
-                                    <td>-</td>
-                                    <td>9:00 AM - 6:30 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Friday</td>
-                                    <td>-</td>
-                                    <td>9:00 AM - 6:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Sat - Sun</td>
-                                    <td>-</td>
-                                    <td>CLOSED</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <img src="web/images/abimg1.png" alt="">
+                        <div class="content">
+                            <p>Premium Microsoft health cloud for zero downtime and secured patient data.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-sm-6 d-flex align-items-center">
+                <div>
                     <div class="afterdiv2 afterdives">
-                        <h5>Working Time</h5>
+                        <img src="web/images/abimg2.jpg" alt="">
                         <div class="content">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum eligendi voluptatibus
-                                accusantium voluptates nulla et iusto nobis quia soluta modi?</p>
-                            <div class="button2">
-                                <a href="">View Timetable</a>
-                            </div>
+                            <p>Manage multiple locations or remote patient care using our single integrated solution.
+                            </p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-sm-6 d-flex align-items-center">
+                <div>
                     <div class="afterdiv3 afterdives">
-                        <h5>Appointments</h5>
-                       <div class="content">
-                        <p>An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and vitae a purus
-                            primis ipsum magna ipsum</p>
-                        <div class="button2">
-                            <a href="">Make An Appointment</a>
+                        <img src="web/images/abimg3.jpg" alt="">
+                        <div class="content">
+                            <p>Optimize your revenue cycle & accelerate financial management.</p>
                         </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="afterdiv4 afterdives">
+                        <img src="web/images/abimg4.webp" alt="">
+                        <div class="content">
+                            <p>Speech to text for faster and accurate clinical documentation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="afterdiv5 afterdives">
+                        <img src="web/images/abimg5.jpg" alt="">
+                        <div class="content">
+                            <p>Experience never-before collaborative care.</p>
                         </div>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
 
-                <div class="col-lg-3 col-sm-6 d-flex align-items-center">
-                    <div class="afterdiv4 afterdives">
-                        <h5 class="d-flex flex-column gap-3">Emergency Cases <br>
-                            <span><i class="bi bi-telephone-fill"></i> 1-800-123-4560 </span>
-                        </h5>
-                        <div class="content">
-                        <p>An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and vitae a purus
-                            primis ipsum magna ipsum</p>
-                            </div>
+    <!-- key featured start -->
+    <section class="bg-light pt-5 keyfeatured">
+        <div class="container">
+            <div class="headingsection">
+                <h1 class="headingmid">Key Features</h1>
+                <p> Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center mb-lg-0 mb-3">
+                    <div class="">
+                        <img src="web/images/crm-removebg-preview.png" width="100%" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6 order-lg-first">
+                    <ul>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Dashboard for all user
+                                types</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Patient & Visitors
+                                Management</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Queue Management</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>SMS and Whatsapp
+                                Integration</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Assessment</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Insight</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <ul>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Dashboard for all user
+                                types</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Patient & Visitors
+                                Management</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Queue Management</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>SMS and Whatsapp
+                                Integration</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Assessment</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Insight</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <ul>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Dashboard for all user
+                                types</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Patient & Visitors
+                                Management</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Queue Management</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>SMS and Whatsapp
+                                Integration</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Assessment</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Insight</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <ul>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Dashboard for all user
+                                types</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Patient & Visitors
+                                Management</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Queue Management</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>SMS and Whatsapp
+                                Integration</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Assessment</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Insight</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <ul>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Dashboard for all user
+                                types</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Patient & Visitors
+                                Management</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Queue Management</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>SMS and Whatsapp
+                                Integration</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Assessment</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Insight</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <ul>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Dashboard for all user
+                                types</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Patient & Visitors
+                                Management</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Queue Management</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>SMS and Whatsapp
+                                Integration</span></li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Assessment</span>
+                        </li>
+                        <li><img src="web/images/features/data.png" width="40" alt=""> <span>Clinical Insight</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- key featured end -->
+
+    <!-- about section start -->
+    <!-- <section>
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6">
+                    <div>
+                        <img src="web/images/aboutsecimg.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-3 d-flex align-items-center justify-content-center">
+                    <div>
+                        <h6 class="headingcapital">Welcome to MedService</h6>
+                        <h1 class="headingmid">Complete Medical <br> Solutions in One Place</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus in itaque nulla
+                            necessitatibus a vero eaque iusto quae placeat voluptatem ducimus ipsa alias sed fugiat
+                            earum molestiae doloremque, quo molestias saepe quaerat voluptatum consequatur ex quis!
+                            Facilis ratione fuga dolores fugit atque quaerat, eos aliquid, laboriosam praesentium alias
+                            esse harum?</p>
+                        <p class="text-end headingcapital">- by Saloni Bansal <br><small>(Head of Clinic)</small></p>
                     </div>
                 </div>
             </div>
         </div>
+    </section> -->
+    <!-- about section end -->
+
+    <!-- our services all start -->
+    <!-- <section class="my-5 bg-light py-5">
+        <div class="container">
+            <div class="headingsection">
+                <h1 class="headingmid">Total Health Care Solutions</h1>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, ipsam! Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Esse repellat officia velit! Sit nihil cum
+                    esse est!</p>
+            </div>
+            <div class="multiple-items">
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="servicesCardsHomeimg">
+                            <img src="web/images/servicescardimg/icons8-mri-64.png" width="60px" alt="">
+                        </div>
+                        <h6 class="headingcapital">MRI</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem assumenda
+                            magnam ab molestias accusantium culpa distinctio quaerat aliquid aspernatur ipsam,
+                            necessitatibus dolor quasi repellat. Aliquid reprehenderit ad quidem aut.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- our services all start -->
+
+    <!-- best practice start -->
+    <!-- <section class="my-5">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6 mt-lg-0 mt-3 d-flex align-items-center justify-content-center">
+                    <div>
+                        <h6 class="headingcapital">Best Practices</h6>
+                        <h1 class="headingmid">Clinic with Innovative <br>Approach to Treatment</h1>
+                        <p>An enim nullam tempor sapien gravida donec enim ipsum blandit porta justo integer odio velna
+                            vitae auctor integer congue magna at pretium purus pretium ligula rutrum itae laoreet augue
+                            posuere and curae integer congue leo metus mollis primis and mauris</p>
+                        <ul class="contentlist">
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-lg-0 mt-3">
+                    <div>
+                        <img src="web/images/BP1.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- our clients section start -->
+    <div class="my-5">
+        <div class="headingsection">
+            <h1 class="headingmid">Our Customer Locations</h1>
+        </div>
+        <div id="map"></div>
     </div>
+    <!-- our clients section end -->
+    <!-- Qualified Doctors start -->
+    <!-- <section class="">
+        <div class="servicesmaindiv d-lg-flex align-items-center justify-content-center">
+            <div class="qualifieddocleft"></div>
+            <div class="qualifieddocright">
+                <div class="container">
+                    <div>
+                        <h6 class="headingcapital">Our Services</h6>
+                        <h1 class="headingmid">Outpatient Management <br> (OPD Module)</h1>
+                        <p class="mt-4">Manage hospitals and chain of clinics of any size across multiple geographical locations with
+                            a single login from our OPD module. Enhance transparency, streamline workflows, and increase
+                            patient engagement through communication management.</p>
+                        <div class="d-flex column-gap-5 flex-wrap">
+                            <ul class="contentlist">
+                            <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Patient Registration </span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Appointment </span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Queue Management </span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>OP Billing</span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Templates</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>EHR (Electronic Health Record)</span>
+                            </li>
+                        </ul>
+                        <ul class="contentlist">
+                            <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Patient Registration </span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Appointment </span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Queue Management </span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>OP Billing</span>
+                            </li>
+                             <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>Templates</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-chevron-double-right"></i>
+                                <span>EHR (Electronic Health Record)</span>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="button2 mt-4">
+                            <a href="">View Timetable</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Qualified Doctors end -->
+
+    <!-- Highest Quality Care start -->
+    <section class="my-5">
+        <div class="container">
+            <div class="headingsection">
+                <h6 class="headingcapital">Why Choose Hospital Management Software</h6>
+                <h1 class="headingmid">Superior Healthcare in India</h1>
+
+            </div>
+            <div class="row g-md-5 g-3 ">
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="wcus">
+                        <img src="web/images/abimg1.png" width="100px" alt="">
+                        <h4>Health Data Exchange</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium atque vero, aut quisquam minus vel fugit expedita eum quia?</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="wcus">
+                        <img src="web/images/abimg1.png" width="100px" alt="">
+                        <h4>Health Data Exchange</h4>
+                        <p>Lorem Lorem ipsum dolor sit amet. ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium atque vero, aut quisquam minus vel fugit expedita eum quia?</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-sm-6">
+                    <div class="wcus">
+                        <img src="web/images/abimg1.png" width="100px" alt="">
+                        <h4>Health Data Exchange</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium atque vero, aut quisquam minus vel fugit expedita eum quia?</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="wcus">
+                        <img src="web/images/abimg1.png" width="100px" alt="">
+                        <h4>Health Data Exchange</h4>
+                        <p>Lorem Lorem ipsum dolor sit amet. ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium atque vero, aut quisquam minus vel fugit expedita eum quia?</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="wcus">
+                        <img src="web/images/abimg1.png" width="100px" alt="">
+                        <h4>Health Data Exchange</h4>
+                        <p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse. ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium atque vero, aut quisquam minus vel fugit expedita eum quia?</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="wcus">
+                        <img src="web/images/abimg1.png" width="100px" alt="">
+                        <h4>Health Data Exchange</h4>
+                        <p>Harum praesentium atque vero, aut quisquam minus vel fugit expedita eum quia?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Highest Quality Care end -->
+
+    <!-- Highest Quality Care start -->
+    <!-- <section class="my-5">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6 mt-lg-0 mt-3 d-flex align-items-center justify-content-center">
+                    <div>
+                        <h6 class="headingcapital">Highest Quality Care</h6>
+                        <h1 class="headingmid">Solutions to Complex<br> Medical Problems </h1>
+
+                        <ul class="contentlist">
+                            <li class="mb-3"><i class="bi bi-chevron-double-right"></i> Maecenas gravida porttitor nunc,
+                                quis vehicula
+                                magna luctus tempor. Quisque vel laoreet turpis urna augue, viverra a augue eget, dictum
+                                tempor diam pulvinar massa purus nulla</li>
+                            <li class="mb-3"><i class="bi bi-chevron-double-right"></i> Lorem, ipsum dolor sit amet
+                                consectetur
+                                adipisicing elit. Aliquid cum commodi magnam, tempora aut incidunt illum. Ex totam
+                                pariatur
+                                eligendi?</li>
+                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Est eum suscipit exercitationem molestias in odit vitae.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-lg-0 mt-3">
+                    <div>
+                        <img src="web/images/videoimg-1.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Highest Quality Care end -->
+
+    <!-- testimonials all start -->
+  <section class="my-5 bg-light py-5">
+        <div class="container">
+            <div class="headingsection">
+                <h6 class="headingcapital">Trusted by providers across india</h6>
+                <h1 class="headingmid">Our Customers</h1>
+            </div>
+            <div class="multiple-testimonials">
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                   <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                  <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                   <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                   <div class="servicesCardsHome">
+                        <div class="testimonialdiv">
+                            <img src="web/images/testimonial1.jpg" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                assumenda
+                                Lorem ipsum dolor sit amet.
+                            </p>
+                            <p>Saloni Bansal</p>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- testimonials all start -->
 
     <script src="web/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var map = L.map('map').setView([20, 78], 3);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            var clients = [
+                [28.6139, 77.2090],
+                [19.0760, 72.8777],
+                [13.0827, 80.2707],
+                [25.2048, 55.2708],
+                [51.5072, -0.1276]
+            ];
+
+            clients.forEach(function (loc) {
+                L.marker(loc).addTo(map);
+            });
+
+        });
+    </script>
+    <script>
+
+        $('.autoplay').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            dots: true,
+            arrows: false,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+        });
+        $('.multiple-items').slick({
+            dots: true,
+            infinite: true,
+            arrows: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+        $('.multiple-testimonials').slick({
+            dots: true,
+            infinite: true,
+            arrows: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+    </script>
 </body>
 
 </html>
