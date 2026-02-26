@@ -540,3 +540,35 @@ font-size: 14px;
   font-size: 14px;
 } 
 }
+/* trusted by */
+ .trustedby > div >img{
+width: 200px;
+    }
+
+/* faqs */
+.accordion-item {
+margin:0.5rem 0;
+}
+.accordion-button{
+    color: #01596c !important; 
+    font-weight: 700 !important;
+font-size: 18px !important;
+}
+.accordion-header:hover{
+background-color: var(--bs-accordion-active-bg) !important;
+
+}
+.accordion-button:not(.collapsed) {
+    background-color: #01596c !important;
+    box-shadow: none !important;
+    color: #fff !important; 
+}
+.accordion-body ul{
+    padding-left: inherit !important;
+}
+.accordion-body ul li{
+    list-style: disc;
+}
+.accordion-button::after {
+    background-image: url(../images/icons8-down-30.png) !important;
+}
