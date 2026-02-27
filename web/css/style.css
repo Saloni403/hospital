@@ -22,7 +22,8 @@ li{
     margin-bottom: 2.5rem;
 }
 .headingsection p{
-    width: 50vmax;
+  max-width: 600px;
+    width: 100%;
 }
 .headingcapital{
     text-transform: uppercase;
@@ -123,6 +124,7 @@ header .container{
 }
 header .logodiv img{
 width: 150px;
+cursor: pointer;
 }
 /* header .headernav{
     display: flex;
@@ -572,3 +574,199 @@ background-color: var(--bs-accordion-active-bg) !important;
 .accordion-button::after {
     background-image: url(../images/icons8-down-30.png) !important;
 }
+
+
+/* footer bottom */
+.appointment-section{
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+   display: none;
+   align-items: center;
+   justify-content: center;
+
+}
+.appointment-section.active{
+    display: flex;
+}
+
+.appointment-div{
+    max-width: 600px;
+    width: 100%;
+     border-radius: 10px;
+}
+
+.contact-form{
+    background-color: #fff;
+    width: 100%;
+    margin: 2.5rem 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.contact-form input , textarea , select{
+    width: 100%;
+    margin-bottom: 1rem !important;
+    padding:0.5rem 1rem;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #01596c !important ;
+    box-shadow: none !important;
+    border-width: 2px;
+    color: #01596c;
+}
+
+.contact-form input:focus-visible , textarea:focus-visible, select:focus-visible{
+    outline: none ;
+    color: #01596c ;
+}
+.footer-bottom{
+    background-color: #000;
+    color: #fff;
+}
+.footer-bottom p{
+  font-size: 14px;
+}
+.footer-bottom a{
+   font-size: 14px;
+    color: #00a3c8;
+    font-weight: 700;
+}
+
+/* terms and condition page */
+.terms-section .container{
+    background-color: #fff;
+}
+.terms-section h4{
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+.terms-section p{
+  color:#555;
+  line-height: 1.7;
+}
+
+.terms-section ul{
+  padding-left: 18px;
+}
+
+.terms-section li{
+  margin-bottom: 8px;
+}
+
+
+/*packages section */
+.packages-section {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(#ffffff , rgb(51, 138, 157));
+}
+.packages-section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+background-image: url(../images/ribbonfinal.png);
+background-repeat: no-repeat;
+background-position:left center;
+background-size: cover;
+}
+
+.my-package-card{
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #01596c;
+    /* margin-bottom: 2rem; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform 0.3s ease;
+}
+.my-package-card:hover{
+    transform: translateY(-5px);
+}
+.prices span:nth-child(1){
+    font-size: 2rem;
+    color: #01596c;
+}
+.prices span:nth-child(2){
+    font-size: 3rem;
+    color: #01596c;
+    font-weight: 700;
+}
+.month{
+    color: #01596c;
+}
+.packages-list li{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0.5rem 0;
+    /* margin-bottom: 0.75rem; */
+    border-bottom: 1px solid rgb(202, 202, 202);
+}
+.packages-list li p{
+    margin-bottom: 0;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+.icons8div {
+            background-color: #028aa9;
+            padding: 2px 4px;
+            border-radius: 50%;
+            width: fit-content;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icons8div img {
+            width: 20px;
+        }
+        
+        .featuredd{
+            background:  linear-gradient(to right, #ffffff , rgba(51, 138, 157, 0.667), #ffffff);
+            margin-top: 1rem;
+            padding: 0.5rem 0;
+           
+display: flex;
+align-items: center;
+justify-content: center;
+        }
+
+        .featuredd p{
+            margin-bottom: 0;
+             color: #01596c;
+             font-weight: 700;
+             position: relative;
+        }
+         .featuredd p::after{
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #01596c;
+top: 50%;
+right: -10px;
+transform: translateX(100%);
+         }
+         .featuredd p::before{
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #01596c;
+top: 50%;
+left: -10px;
+transform: translateX(-100%);
+         }

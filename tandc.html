@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="web/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+
+<body>
+
+    <!-- toppest nav start -->
+    <div class="toppest d-sm-block d-none">
+        <div class="container">
+            <div class="toppest-contact">
+                <a href="">
+                    <i class="bi bi-envelope-fill"></i>&nbsp;
+                    <span>info@hospital.com</span>
+                </a>
+                <span class="bar1"></span>
+                <a href="">
+                    <i class="bi bi-telephone-fill"></i>&nbsp;
+                    <span>+91 86309 92711</span>
+                </a>
+            </div>
+            <div class="toppest-social">
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- toppest nav end -->
+
+    <header>
+        <div class="container d-sm-flex d-none">
+            <div class="logodiv">
+                <img src="web/images/demologo.png" onclick="location.href='index.html'" alt="">
+            </div>
+            <!-- <div class="headernav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li class="Servicesdropdown"><a href="javascript:void(0);">Services <i
+                                class="bi bi-caret-down-fill"></i></a>
+                        <ul class="sublist">
+                            <li>Pediatrics</li>
+                            <li>Neurology</li>
+                            <li>Haematology</li>
+                            <li>X-Ray Diagnostic</li>
+                            <li>Cardiology</li>
+                            <li>MRI</li>
+                            <li>Laboratory Services</li>
+                            <li>Emergency Help</li>
+                        </ul>
+                    </li>
+                    <li><a href="">Blogs</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+                <div class="button">
+                    <a href="">Book An Appointment</a>
+                </div>
+            </div> -->
+            <div class="button" onclick="getAppointment(event)">
+                <a href="javascript:void(0);">Book An Appointment <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- mobile view header -->
+        <div class="container mobiheader d-sm-none d-flex">
+            <i class="bi bi-list" onclick="showMenu()"></i>
+            <div>
+                <img src="web/images/demologo.png" width="150" alt="">
+            </div>
+            <i class="bi bi-telephone-fill"></i>
+        </div>
+    </header>
+
+    <!-- menu start -->
+    <div class="menu">
+        <div class="text-end p-3">
+            <i class="bi bi-x" onclick="removeMenu()"></i>
+        </div>
+        <ul>
+            <li><a href="" class="active">About Us</a></li>
+            <li><a href="">Key Features</a></li>
+            <li onclick="showSubMenu()"><a href="javascript:void(0);">Our Services <i
+                        class="bi bi-caret-down-fill"></i></a>
+                <ul class="menusublist">
+                    <li><a href="">Outpatient Management</a></li>
+                    <li><a href="">Inpatient Management</a></li>
+                    <li><a href="">LIMS (Lab)</a></li>
+                    <li><a href="">Pharmacy Management</a></li>
+                    <li><a href="">(EHR) Electronic Health Record</a></li>
+                    <li><a href="">Inventory Management</a></li>
+                    <li><a href="">RIS and PACS</a></li>
+                    <li><a href="">Clinical Assessment Forms</a></li>
+                    <li><a href="">Healthcare Revenue Cycle Management / TPA System</a></li>
+                    <li><a href="">FHIR Compliant</a></li>
+                    <li><a href="">Operation Theater Management</a></li>
+                    <li><a href="">Workforce Management</a></li>
+                    <li><a href="">Communication Management</a></li>
+                </ul>
+            </li>
+
+            <li><a href="">Our Packages</a></li>
+            <!-- <li><a href="">Contact</a></li> -->
+            <li><a href="javascript:void(0);" onclick="getAppointment(event)" class="active">Book An Appointment <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="bg-light">
+    <!-- terms and condition start -->
+     <section class="terms-section pt-sm-5">
+  <div class="container p-sm-5 p-3">
+    
+    <div class="headingsection text-center mb-4">
+      <h1 class="headingmid">Terms & Conditions</h1>
+      <p>Last updated: January 2026</p>
+    </div>
+
+    <div class="terms-content">
+
+      <h4>1. Acceptance of Terms</h4>
+      <p>
+        By accessing or using our Hospital Management Software (“Software”), you agree to comply with and be bound by these Terms & Conditions. If you do not agree, please do not use our services.
+      </p>
+
+      <h4>2. Description of Services</h4>
+      <p>
+        Our platform provides digital healthcare management solutions including patient management, appointment scheduling, billing, pharmacy management, electronic health records (EHR), laboratory integration, and reporting tools.
+      </p>
+
+      <h4>3. User Responsibilities</h4>
+      <ul>
+        <li>Provide accurate and complete information.</li>
+        <li>Maintain confidentiality of login credentials.</li>
+        <li>Comply with healthcare data regulations.</li>
+        <li>Use the software only for lawful medical purposes.</li>
+      </ul>
+
+      <h4>4. Data Privacy & Security</h4>
+      <p>
+        We prioritize patient data security and implement industry-standard safeguards. Users are responsible for ensuring proper authorization before accessing or sharing patient information.
+      </p>
+
+      <h4>5. Subscription & Payments</h4>
+      <p>
+        Certain features require paid subscriptions. Fees are billed according to selected plans. Payments are non-refundable unless stated otherwise in a written agreement.
+      </p>
+
+      <h4>6. Service Availability</h4>
+      <p>
+        We strive for high availability but do not guarantee uninterrupted service. Maintenance, updates, or technical issues may temporarily affect access.
+      </p>
+
+      <h4>7. Limitation of Liability</h4>
+      <p>
+        We are not liable for clinical decisions, medical outcomes, data entry errors, or any indirect damages resulting from software usage.
+      </p>
+
+      <h4>8. Intellectual Property</h4>
+      <p>
+        All software, design, content, and technology remain the property of the company. Unauthorized copying or distribution is prohibited.
+      </p>
+
+      <h4>9. Termination</h4>
+      <p>
+        We may suspend or terminate access if users violate these terms, misuse the system, or engage in unlawful activities.
+      </p>
+
+      <h4>10. Updates to Terms</h4>
+      <p>
+        Terms may be updated periodically. Continued use of the software indicates acceptance of revised terms.
+      </p>
+
+      <h4>11. Contact Information</h4>
+      <p>
+        For questions regarding these Terms & Conditions, contact us at:
+        <br>
+        Email: info@hospital.com
+        <br>
+        Phone: +91 XXXXX XXXXX
+      </p>
+
+    </div>
+  </div>
+</section>
+     <!-- terms and condition start -->
+
+ <!-- appointment form start -->
+         <section class="appointment-section">
+         <div class="appointment-div">
+            
+            <form action="" class="contact-form p-sm-5 p-3">
+                <div class="text-end">
+                <i class="bi bi-x-lg"></i>
+            </div>
+                    <div class="headingsection">
+                        <h1 class="headingmid">Get Appointment</h1>
+                    </div>
+
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="text" placeholder="Name">
+                        <input type="tel" placeholder="Phone" name="" id="">
+                    </div>
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="email" placeholder="Email" name="" id="">
+                        <select name="" id="field">
+                            <option value="Choose Your Field">Choose Your Field</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Hospital">Hospital</option>
+                            <option value="Agencies">Agencies</option>
+                            <option value="Accountant">Accountant</option>
+                            <option value="Nurse">Nurse</option>
+                            <option value="Pharmacy">Pharmacy</option>
+                        </select>
+                    </div>
+                    <textarea name="" placeholder="Message" rows="4" id=""></textarea>
+                    <div class="button w-100 text-center mt-3">
+                        <a href="">Submit</a>
+                    </div>
+                </form>
+         </div>
+         </section>
+         <!-- appointment form end -->
+
+     <!-- footer start -->
+    <footer>
+        <div class="container">
+            <form action="" class="contact-form p-sm-5 p-3">
+                <div class="headingsection">
+                    <h1 class="headingmid">Contact Us</h1>
+                </div>
+
+                <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                    <input type="text" placeholder="Name">
+                    <input type="tel" placeholder="Phone" name="" id="">
+                </div>
+                <textarea name="" placeholder="Message" rows="4" id=""></textarea>
+                <div class="button w-100 text-center mt-3">
+                    <a href="">Submit</a>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="footer-bottom">
+            <div class="container py-3 d-flex gap-3 flex-wrap align-items-center justify-content-between">
+
+                <div>
+                    <p class="mb-0">Copyright @2026 Hospital.All Rights Reserved | Design and developed by <a
+                            href="https://tssgtech.com/">Tssg-Tech.</a></p>
+                </div>
+                <div>
+                    <div class="">
+                        <a href="tandc.html">Terms &amp; Conditions</a> <span>|</span>
+                        <a href="pandp.html">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    <script src="web/js/script.js"></script>
+
+</body>
+
+</html>

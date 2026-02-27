@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="web/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+
+<body>
+
+    <!-- toppest nav start -->
+    <div class="toppest d-sm-block d-none">
+        <div class="container">
+            <div class="toppest-contact">
+                <a href="">
+                    <i class="bi bi-envelope-fill"></i>&nbsp;
+                    <span>info@hospital.com</span>
+                </a>
+                <span class="bar1"></span>
+                <a href="">
+                    <i class="bi bi-telephone-fill"></i>&nbsp;
+                    <span>+91 86309 92711</span>
+                </a>
+            </div>
+            <div class="toppest-social">
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href=""><i class="bi bi-twitter-x"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- toppest nav end -->
+
+    <header>
+        <div class="container d-sm-flex d-none">
+            <div class="logodiv">
+                <img src="web/images/demologo.png" onclick="location.href='index.html'" alt="">
+            </div>
+            <!-- <div class="headernav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li class="Servicesdropdown"><a href="javascript:void(0);">Services <i
+                                class="bi bi-caret-down-fill"></i></a>
+                        <ul class="sublist">
+                            <li>Pediatrics</li>
+                            <li>Neurology</li>
+                            <li>Haematology</li>
+                            <li>X-Ray Diagnostic</li>
+                            <li>Cardiology</li>
+                            <li>MRI</li>
+                            <li>Laboratory Services</li>
+                            <li>Emergency Help</li>
+                        </ul>
+                    </li>
+                    <li><a href="">Blogs</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+                <div class="button">
+                    <a href="">Book An Appointment</a>
+                </div>
+            </div> -->
+            <div class="button" onclick="getAppointment(event)">
+                <a href="javascript:void(0);">Book An Appointment <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- mobile view header -->
+        <div class="container mobiheader d-sm-none d-flex">
+            <i class="bi bi-list" onclick="showMenu()"></i>
+            <div>
+                <img src="web/images/demologo.png" width="150" alt="">
+            </div>
+            <i class="bi bi-telephone-fill"></i>
+        </div>
+    </header>
+
+    <!-- menu start -->
+    <div class="menu">
+        <div class="text-end p-3">
+            <i class="bi bi-x" onclick="removeMenu()"></i>
+        </div>
+        <ul>
+            <li><a href="" class="active">About Us</a></li>
+            <li><a href="">Key Features</a></li>
+            <li onclick="showSubMenu()"><a href="javascript:void(0);">Our Services <i
+                        class="bi bi-caret-down-fill"></i></a>
+                <ul class="menusublist">
+                    <li><a href="">Outpatient Management</a></li>
+                    <li><a href="">Inpatient Management</a></li>
+                    <li><a href="">LIMS (Lab)</a></li>
+                    <li><a href="">Pharmacy Management</a></li>
+                    <li><a href="">(EHR) Electronic Health Record</a></li>
+                    <li><a href="">Inventory Management</a></li>
+                    <li><a href="">RIS and PACS</a></li>
+                    <li><a href="">Clinical Assessment Forms</a></li>
+                    <li><a href="">Healthcare Revenue Cycle Management / TPA System</a></li>
+                    <li><a href="">FHIR Compliant</a></li>
+                    <li><a href="">Operation Theater Management</a></li>
+                    <li><a href="">Workforce Management</a></li>
+                    <li><a href="">Communication Management</a></li>
+                </ul>
+            </li>
+
+            <li><a href="">Our Packages</a></li>
+            <!-- <li><a href="">Contact</a></li> -->
+            <li><a href="javascript:void(0);" onclick="getAppointment(event)" class="active">Book An Appointment <i class="bi bi-arrow-right"></i></a></li>
+        </ul>
+    </div>
+
+    <div class="bg-light">
+    <!-- privacy and policy start -->
+    <section class="terms-section pt-sm-5">
+  <div class="container p-sm-5 p-3">
+    
+    <div class="headingsection text-center mb-4">
+      <h1 class="headingmid">Privacy Policy</h1>
+      <p>Last updated: January 2026</p>
+    </div>
+
+    <div class="terms-content">
+
+      <h4>1. Introduction</h4>
+      <p>
+        This Privacy Policy explains how we collect, use, store, and protect information when you use our Hospital Management Software. We are committed to safeguarding healthcare data and maintaining user privacy.
+      </p>
+
+      <h4>2. Information We Collect</h4>
+      <ul>
+        <li>Patient demographic and medical information</li>
+        <li>Appointment and billing data</li>
+        <li>Hospital staff and user account details</li>
+        <li>System usage and technical information</li>
+      </ul>
+
+      <h4>3. How We Use Information</h4>
+      <p>
+        We use collected data to operate the software, manage healthcare workflows, improve system performance, provide support, generate reports, and ensure security and compliance.
+      </p>
+
+      <h4>4. Data Security</h4>
+      <p>
+        We implement industry-standard security measures including encryption, secure servers, role-based access, and regular monitoring to protect sensitive healthcare information.
+      </p>
+
+      <h4>5. Data Sharing</h4>
+      <p>
+        We do not sell personal data. Information may be shared only with authorized users, healthcare providers, regulatory authorities (when required), or trusted service partners supporting system operations.
+      </p>
+
+      <h4>6. Data Retention</h4>
+      <p>
+        Data is retained as required for healthcare operations, legal compliance, and contractual obligations. Hospitals may request data export or deletion where applicable.
+      </p>
+
+      <h4>7. User Responsibilities</h4>
+      <ul>
+        <li>Maintain login credential security</li>
+        <li>Ensure proper patient consent</li>
+        <li>Follow applicable healthcare data regulations</li>
+      </ul>
+
+      <h4>8. Cookies & Tracking</h4>
+      <p>
+        Our platform may use cookies and analytics to improve user experience, monitor performance, and enhance security.
+      </p>
+
+      <h4>9. Third-Party Services</h4>
+      <p>
+        Some features may integrate with third-party services such as payment gateways, laboratory systems, or communication tools. These providers have their own privacy policies.
+      </p>
+
+      <h4>10. Policy Updates</h4>
+      <p>
+        This Privacy Policy may be updated periodically. Continued use of the software indicates acceptance of the updated policy.
+      </p>
+
+      <h4>11. Contact Us</h4>
+      <p>
+        If you have questions about this Privacy Policy:
+        <br>
+        Email: info@hospital.com
+        <br>
+        Phone: +91 XXXXX XXXXX
+      </p>
+
+    </div>
+  </div>
+</section>
+     <!-- privacy and policy start -->
+
+ <!-- appointment form start -->
+         <section class="appointment-section">
+         <div class="appointment-div">
+            
+            <form action="" class="contact-form p-sm-5 p-3">
+                <div class="text-end">
+                <i class="bi bi-x-lg"></i>
+            </div>
+                    <div class="headingsection">
+                        <h1 class="headingmid">Get Appointment</h1>
+                    </div>
+
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="text" placeholder="Name">
+                        <input type="tel" placeholder="Phone" name="" id="">
+                    </div>
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="email" placeholder="Email" name="" id="">
+                        <select name="" id="field">
+                            <option value="Choose Your Field">Choose Your Field</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Hospital">Hospital</option>
+                            <option value="Agencies">Agencies</option>
+                            <option value="Accountant">Accountant</option>
+                            <option value="Nurse">Nurse</option>
+                            <option value="Pharmacy">Pharmacy</option>
+                        </select>
+                    </div>
+                    <textarea name="" placeholder="Message" rows="4" id=""></textarea>
+                    <div class="button w-100 text-center mt-3">
+                        <a href="">Submit</a>
+                    </div>
+                </form>
+         </div>
+         </section>
+         <!-- appointment form end -->
+
+     <!-- footer start -->
+    <footer>
+        <div class="container">
+            <form action="" class="contact-form p-sm-5 p-3">
+                <div class="headingsection">
+                    <h1 class="headingmid">Contact Us</h1>
+                </div>
+
+                <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                    <input type="text" placeholder="Name">
+                    <input type="tel" placeholder="Phone" name="" id="">
+                </div>
+                <textarea name="" placeholder="Message" rows="4" id=""></textarea>
+                <div class="button w-100 text-center mt-3">
+                    <a href="">Submit</a>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="footer-bottom">
+            <div class="container py-3 d-flex gap-3 flex-wrap align-items-center justify-content-between">
+
+                <div>
+                    <p class="mb-0">Copyright @2026 Hospital.All Rights Reserved | Design and developed by <a
+                            href="https://tssgtech.com/">Tssg-Tech.</a></p>
+                </div>
+                <div>
+                    <div class="">
+                        <a href="tandc.html">Terms &amp; Conditions</a> <span>|</span>
+                        <a href="pandp.html">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    <script src="web/js/script.js"></script>
+
+</body>
+
+</html>

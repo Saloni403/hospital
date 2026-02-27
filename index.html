@@ -22,7 +22,7 @@
 <body>
 
     <!-- toppest nav start -->
-    <div class="toppest d-sm-block d-none">
+    <div class="toppest d-sm-block d-none ">
         <div class="container">
             <div class="toppest-contact">
                 <a href="">
@@ -44,11 +44,10 @@
         </div>
     </div>
     <!-- toppest nav end -->
-
     <header>
         <div class="container d-sm-flex d-none">
             <div class="logodiv">
-                <img src="web/images/demologo.png" alt="">
+                <img src="web/images/demologo.png" onclick="location.href='index.html'" alt="">
             </div>
             <!-- <div class="headernav">
                 <ul>
@@ -74,8 +73,8 @@
                     <a href="">Book An Appointment</a>
                 </div>
             </div> -->
-            <div class="button">
-                <a href="">Book An Appointment <i class="bi bi-arrow-right"></i></a>
+            <div class="button" onclick="getAppointment(event)">
+                <a href="javascript:void(0);">Book An Appointment <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
 
@@ -90,7 +89,7 @@
     </header>
 
     <!-- menu start -->
-    <div class="menu">
+    <div class="menu ">
         <div class="text-end p-3">
             <i class="bi bi-x" onclick="removeMenu()"></i>
         </div>
@@ -118,7 +117,8 @@
 
             <li><a href="">Our Packages</a></li>
             <!-- <li><a href="">Contact</a></li> -->
-            <li><a href="" class="active">Book An Appointment <i class="bi bi-arrow-right"></i></a></li>
+            <li><a href="javascript:void(0);" onclick="getAppointment(event)" class="active">Book An Appointment <i
+                        class="bi bi-arrow-right"></i></a></li>
         </ul>
     </div>
 
@@ -141,8 +141,8 @@
                             <div class="col-sm-6"><i class="bi bi-chevron-double-right"></i> Workforce Management</div>
                             <div class="col-sm-6"><i class="bi bi-chevron-double-right"></i> For Clinics</div>
                         </div>
-                        <div class="button mt-4">
-                            <a href="">Book An Appointment</a>
+                        <div class="button mt-4" onclick="getAppointment(event)">
+                            <a href="javascript:void(0);">Book An Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -155,9 +155,6 @@
             </div>
         </div>
     </section>
-
-
-
 
     <!-- after banner -->
     <div class="afterdiv">
@@ -443,36 +440,200 @@
     </section> -->
     <!-- our services all start -->
 
-    <!-- best practice start -->
-    <!-- <section class="my-5">
-        <div class="container">
-            <div class="row ">
-                <div class="col-lg-6 mt-lg-0 mt-3 d-flex align-items-center justify-content-center">
-                    <div>
-                        <h6 class="headingcapital">Best Practices</h6>
-                        <h1 class="headingmid">Clinic with Innovative <br>Approach to Treatment</h1>
-                        <p>An enim nullam tempor sapien gravida donec enim ipsum blandit porta justo integer odio velna
-                            vitae auctor integer congue magna at pretium purus pretium ligula rutrum itae laoreet augue
-                            posuere and curae integer congue leo metus mollis primis and mauris</p>
-                        <ul class="contentlist">
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor sit amet.</li>
-                        </ul>
+    
+    <!-- packages start -->
+    <section class="my-5 packages-section">
+        <div class="container py-5">
+            <div class="headingsection">
+                <h6 class="headingcapital">Choose the best plan for your healthcare facility.</h6>
+                <h1 class="headingmid">Packages plans</h1>
+            </div>
+
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="my-package-card">
+                        <h2>Basic Plan</h2>
+                        
+                        <div>
+                            <div class="featuredd">
+                <p>For Small Clinics & Hospitals</p>
+            </div>
+                            <div class="d-flex gap-1 align-items-center justify-content-start">
+                            <p class="prices">
+                                <span>&#8377;</span><span>4,999</span>
+                            </p>
+                            <p class="month">
+                                per <br> month
+                            </p>
+                        </div>
+                            <ul class="packages-list">
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Patient Management</p>
+                            </li>
+
+                             <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Basic EMR & Billing</p>
+                            </li>
+                             <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Inventory Management</p>
+                            </li>
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Single Branch Access</p>
+                            </li>
+
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Email Support</p>
+                            </li>
+                            </ul>
+                            <div class="button mt-4 w-100 text-center" onclick="getAppointment(event)">
+                <a href="javascript:void(0);" class="w-100">Get Started</a>
+            </div>
+            <div class="featuredd">
+                <p>Essential Features</p>
+            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-6 mt-lg-0 mt-3">
-                    <div>
-                        <img src="web/images/BP1.png" class="img-fluid" alt="">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="my-package-card">
+                        <h2>Professional Plan</h2>
+                        
+                        <div>
+                            <div class="featuredd">
+                <p>For Mid-Size Hospitals</p>
+            </div>
+                            <div class="d-flex gap-1 align-items-center justify-content-start">
+                            <p class="prices">
+                                <span>&#8377;</span><span>12,999</span>
+                            </p>
+                            <p class="month">
+                                per <br> month
+                            </p>
+                        </div>
+                            <ul class="packages-list">
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Advanced EMR System</p>
+                            </li>
+
+                             <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Lab & Radiology</p>
+                            </li>
+                             <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Insurance & TPA</p>
+                            </li>
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Multi-User Access</p>
+                            </li>
+
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Priority Support</p>
+                            </li>
+                            </ul>
+                            <div class="button mt-4 w-100 text-center" onclick="getAppointment(event)">
+                <a href="javascript:void(0);" class="w-100">Get Started</a>
+            </div>
+            <div class="featuredd">
+                <p>Advanced Features</p>
+            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="my-package-card">
+                        <h2>Enterprise Plan</h2>
+                        
+                        <div>
+                            <div class="featuredd">
+                <p>For Large Hospitals & Chains</p>
+            </div>
+                            <div class="d-flex gap-1 align-items-center justify-content-start">
+                            <p class="prices">
+                                <span>&#8377;</span><span>39,999</span>
+                            </p>
+                            <p class="month">
+                                per <br> month
+                            </p>
+                        </div>
+                            <ul class="packages-list">
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Multi-Branch Management</p>
+                            </li>
+
+                             <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>Telemedicine Integration</p>
+                            </li>
+                             <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>HR & Payroll Module</p>
+                            </li>
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>NABH Compliance</p>
+                            </li>
+
+                            <li>
+                                <div class="icons8div">
+                                    <img src="web/images/lightning.png" alt="">
+                                </div>
+                                <p>24/7 Support</p>
+                            </li>
+                            </ul>
+                            <div class="button mt-4 w-100 text-center" onclick="getAppointment(event)">
+                <a href="javascript:void(0);" class="w-100">Get Started</a>
+            </div>
+            <div class="featuredd">
+                <p>All Premium Features</p>
+            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
+
+    <!-- packages start -->
 
     <!-- our clients section start -->
     <div class="my-5">
@@ -482,81 +643,7 @@
         <div id="map"></div>
     </div>
     <!-- our clients section end -->
-    <!-- Qualified Doctors start -->
-    <!-- <section class="">
-        <div class="servicesmaindiv d-lg-flex align-items-center justify-content-center">
-            <div class="qualifieddocleft"></div>
-            <div class="qualifieddocright">
-                <div class="container">
-                    <div>
-                        <h6 class="headingcapital">Our Services</h6>
-                        <h1 class="headingmid">Outpatient Management <br> (OPD Module)</h1>
-                        <p class="mt-4">Manage hospitals and chain of clinics of any size across multiple geographical locations with
-                            a single login from our OPD module. Enhance transparency, streamline workflows, and increase
-                            patient engagement through communication management.</p>
-                        <div class="d-flex column-gap-5 flex-wrap">
-                            <ul class="contentlist">
-                            <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Patient Registration </span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Appointment </span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Queue Management </span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>OP Billing</span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Templates</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>EHR (Electronic Health Record)</span>
-                            </li>
-                        </ul>
-                        <ul class="contentlist">
-                            <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Patient Registration </span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Appointment </span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Queue Management </span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>OP Billing</span>
-                            </li>
-                             <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>Templates</span>
-                            </li>
-                            <li>
-                                <i class="bi bi-chevron-double-right"></i>
-                                <span>EHR (Electronic Health Record)</span>
-                            </li>
-                        </ul>
-                        </div>
-                        <div class="button2 mt-4">
-                            <a href="">View Timetable</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Qualified Doctors end -->
+
 
     <!-- Highest Quality Care start -->
     <section class="my-5">
@@ -626,279 +713,297 @@
     </section>
     <!-- Highest Quality Care end -->
 
-    <!-- Highest Quality Care start -->
-    <!-- <section class="my-5">
-        <div class="container">
-            <div class="row ">
-                <div class="col-lg-6 mt-lg-0 mt-3 d-flex align-items-center justify-content-center">
-                    <div>
-                        <h6 class="headingcapital">Highest Quality Care</h6>
-                        <h1 class="headingmid">Solutions to Complex<br> Medical Problems </h1>
 
-                        <ul class="contentlist">
-                            <li class="mb-3"><i class="bi bi-chevron-double-right"></i> Maecenas gravida porttitor nunc,
-                                quis vehicula
-                                magna luctus tempor. Quisque vel laoreet turpis urna augue, viverra a augue eget, dictum
-                                tempor diam pulvinar massa purus nulla</li>
-                            <li class="mb-3"><i class="bi bi-chevron-double-right"></i> Lorem, ipsum dolor sit amet
-                                consectetur
-                                adipisicing elit. Aliquid cum commodi magnam, tempora aut incidunt illum. Ex totam
-                                pariatur
-                                eligendi?</li>
-                            <li><i class="bi bi-chevron-double-right"></i> Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Est eum suscipit exercitationem molestias in odit vitae.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 mt-lg-0 mt-3">
-                    <div>
-                        <img src="web/images/videoimg-1.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Highest Quality Care end -->
 
     <!-- trusted by start -->
-<div class="bg-light">
-    <section class="my-5 pt-5">
-        <div class="container">
-            <div class="headingsection">
-                <h1 class="headingmid">Trusted by</h1>
-            </div>
-
-            <div class="trustedby multiple-trustedby">
-                <div>
-                    <img src="web/images/TLogo1.webp" alt="">
-                </div>
-                <div>
-                    <img src="web/images/TLogo2.webp" alt="">
-                </div>
-                <div>
-                    <img src="web/images/TLogo3.webp" alt="">
-                </div>
-                <div>
-                    <img src="web/images/TLogo4.webp" alt="">
-                </div>
-                <div>
-                    <img src="web/images/TLogo5.webp" alt="">
-                </div>
-                <div>
-                    <img src="web/images/TLogo6.webp" alt="">
-                </div>
-                <div>
-                    <img src="web/images/TLogo7.webp" alt="">
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- trusted by end -->
-
-    <!-- testimonials all start -->
-    <section class="my-5 pt-5">
-        <div class="container">
-            <div class="headingsection">
-                <h6 class="headingcapital">Trusted by providers across india</h6>
-                <h1 class="headingmid">Our Customers</h1>
-            </div>
-            <div class="multiple-testimonials">
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="servicesCardsHome">
-                        <div class="testimonialdiv">
-                            <img src="web/images/testimonial1.jpg" alt="">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
-                                assumenda
-                                Lorem ipsum dolor sit amet.
-                            </p>
-                            <p>Saloni Bansal</p>
-                            <p>Patient</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- testimonials all start -->
-
-    <!-- FAQ's start -->
-
-    <section class="my-5 pt-5">
-        <div class="container">
-            <div class="headingsection">
-                <h1 class="headingmid">FAQs</h1>
-            </div>
-
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            What are the effects of computers and technology on healthcare?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Digital technology has made communication between healthcare
-                            providers and patients’ straightforward email, smartphones, text messaging, and other
-                            technologies allow healthcare workers to stay in touch. Patients no longer need to receive
-                            letters reminding them of their appointments and tests as you can add reminders via HMS
-                            software’s self-generated reminding options.</div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Which software process model is used for a hospital management system?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">An increasing model is used in Hospital Management Systems because
-                            software requirements are initially well-defined, but development efforts are linear. </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree" aria-expanded="false"
-                            aria-controls="flush-collapseThree">
-                            What are the unique features of hospital management software?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">These are the features of a hospital management system you should
-                            look for…
-
-                            <ul>
-                                <li>Outpatient Payment Alerts and Process Management. </li>
-                                <li>Digital Imaging and Diagnostics Management. </li>
-                                <li>Intuitive And Useful Patient Portal. </li>
-                                <li>Staff Interaction and Collaboration. </li>
-                                <li>Claims Management. </li>
-                                <li>Workforce management.</li>
-                                <li>Lab management.</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ's end -->
-
-    <!-- footer start -->
-    <footer class="my-5">
-        <div class="container">
-            <form action="">
+    <div class="bg-light">
+        <section class="my-5 pt-5">
+            <div class="container">
                 <div class="headingsection">
-                    <h1 class="headingmid">Contact Us</h1>
+                    <h1 class="headingmid">Trusted by</h1>
                 </div>
 
-            </form>
-        </div>
+                <div class="trustedby multiple-trustedby">
+                    <div>
+                        <img src="web/images/TLogo1.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="web/images/TLogo2.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="web/images/TLogo3.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="web/images/TLogo4.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="web/images/TLogo5.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="web/images/TLogo6.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="web/images/TLogo7.webp" alt="">
+                    </div>
+                </div>
 
-        <hr>
-
-        <div>
-            <div class="container d-flex align-items-center justify-content-between">
-                
-                        <div>
-                            <p class="mb-0">Copyright @2026 Hospital.All Rights Reserved | Design and developed by <a href="">Tssg-Tech.</a></p>
-                        </div>
-                        <div>
-                            <div class="coppyright right-area">
-                <a href="">Terms &amp; Conditions</a> <span>|</span>
-                <a href="">Privacy Policy</a>
-              </div>
-                        </div>
             </div>
-        </div>
-    </footer>
+        </section>
+        <!-- trusted by end -->
+
+        <!-- testimonials all start -->
+        <section class="my-5 pt-5">
+            <div class="container">
+                <div class="headingsection">
+                    <h6 class="headingcapital">Trusted by providers across india</h6>
+                    <h1 class="headingmid">Our Customers</h1>
+                </div>
+                <div class="multiple-testimonials">
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="servicesCardsHome">
+                            <div class="testimonialdiv">
+                                <img src="web/images/testimonial1.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis exercitationem
+                                    assumenda
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                                <p>Saloni Bansal</p>
+                                <p>Patient</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonials all start -->
+
+        <!-- FAQ's start -->
+
+        <section class="my-5 pt-5">
+            <div class="container">
+                <div class="headingsection">
+                    <h1 class="headingmid">FAQs</h1>
+                </div>
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                What are the effects of computers and technology on healthcare?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Digital technology has made communication between healthcare
+                                providers and patients’ straightforward email, smartphones, text messaging, and other
+                                technologies allow healthcare workers to stay in touch. Patients no longer need to
+                                receive
+                                letters reminding them of their appointments and tests as you can add reminders via HMS
+                                software’s self-generated reminding options.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Which software process model is used for a hospital management system?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">An increasing model is used in Hospital Management Systems
+                                because
+                                software requirements are initially well-defined, but development efforts are linear.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                What are the unique features of hospital management software?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">These are the features of a hospital management system you
+                                should
+                                look for…
+
+                                <ul>
+                                    <li>Outpatient Payment Alerts and Process Management. </li>
+                                    <li>Digital Imaging and Diagnostics Management. </li>
+                                    <li>Intuitive And Useful Patient Portal. </li>
+                                    <li>Staff Interaction and Collaboration. </li>
+                                    <li>Claims Management. </li>
+                                    <li>Workforce management.</li>
+                                    <li>Lab management.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ's end -->
+
+        <!-- appointment form start -->
+        <section class="appointment-section">
+            <div class="appointment-div">
+
+                <form action="" class="contact-form p-sm-5 p-3">
+                    <div class="text-end">
+                        <i class="bi bi-x-lg"></i>
+                    </div>
+                    <div class="headingsection">
+                        <h1 class="headingmid">Get Appointment</h1>
+                    </div>
+
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="text" placeholder="Name">
+                        <input type="tel" placeholder="Phone" name="" id="">
+                    </div>
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="email" placeholder="Email" name="" id="">
+                        <select name="" id="field">
+                            <option value="Choose Your Field">Choose Your Field</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Hospital">Hospital</option>
+                            <option value="Agencies">Agencies</option>
+                            <option value="Accountant">Accountant</option>
+                            <option value="Nurse">Nurse</option>
+                            <option value="Pharmacy">Pharmacy</option>
+                        </select>
+                    </div>
+                    <textarea name="" placeholder="Message" rows="4" id=""></textarea>
+                    <div class="button w-100 text-center mt-3">
+                        <a href="">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- appointment form end -->
+
+        <!-- footer start -->
+        <footer class="">
+            <div class="container">
+                <form action="" class="contact-form p-sm-5 p-3">
+                    <div class="headingsection">
+                        <h1 class="headingmid">Contact Us</h1>
+                    </div>
+
+                    <div class="d-sm-flex gap-3 align-items-center justify-content-center">
+                        <input type="text" placeholder="Name">
+                        <input type="tel" placeholder="Phone" name="" id="">
+                    </div>
+                    <textarea name="" placeholder="Message" rows="4" id=""></textarea>
+                    <div class="button w-100 text-center mt-3">
+                        <a href="">Submit</a>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="footer-bottom">
+                <div class="container py-3 d-flex gap-3 flex-wrap align-items-center justify-content-between">
+
+                    <div>
+                        <p class="mb-0">Copyright @2026 Hospital.All Rights Reserved | Design and developed by <a
+                                href="https://tssgtech.com/">Tssg-Tech.</a></p>
+                    </div>
+                    <div>
+                        <div class="">
+                            <a href="tandc.html">Terms &amp; Conditions</a> <span>|</span>
+                            <a href="pandp.html">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="web/js/script.js"></script>
