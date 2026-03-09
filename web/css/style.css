@@ -581,8 +581,22 @@ font-weight: 500;
 .keyfeatured .row ul li {
     margin-bottom: 2.5rem;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
-
+.keyfeatured .row ul li img{
+    width: 40px;
+}
+@media (max-width:400px) {
+    .keyfeatured .row ul li img{
+    width: 30px;
+}
+.keyfeatured .row ul li {
+    font-size: 12px;
+    gap: 4px;
+}
+}
 /* map */
 #map {
     height: 450px;
@@ -951,7 +965,7 @@ font-size: 14px;
     border-bottom: 4px solid #01596c;
 }
 
-.rightdescsection>div .bi-chevron-double-right {
+.bi-chevron-double-right {
     color: #01596c;
 
 }
